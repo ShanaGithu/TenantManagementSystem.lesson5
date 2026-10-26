@@ -1,11 +1,12 @@
 package com.example.tenantmanagementsystem
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tenantmanagementsystem.databinding.ActivityLoginBinding
-import android.net.Uri
+
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
 
@@ -29,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("EMAIL", email)   // NEW: MainActivity reads this in the drawer stage
             startActivity(intent)
             finish()
         }
